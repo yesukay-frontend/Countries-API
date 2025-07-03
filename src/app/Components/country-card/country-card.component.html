@@ -1,1 +1,18 @@
-<p>country-card works!</p>
+<article class="bg-white rounded-md shadow-md overflow-hidden max-w-xs">
+  <img
+    [src]="country.flag"
+    [alt]="'Flag of ' + country.name"
+    class="w-full h-40 object-cover"
+    width="400"
+    height="250"
+    loading="lazy"
+  />
+  <div class="p-6">
+    <h2 class="font-extrabold text-base mb-3 select-none">Country</h2>
+    <p class="text-xs mb-1">
+      <strong>Population:</strong> {{ country.population | number }}
+    </p>
+    <p class="text-xs mb-1"><strong>Region:</strong> {{ country.region }}</p>
+    <p class="text-xs"><strong>Capital:</strong> {{ country.capital }}</p>
+  </div>
+</article>
