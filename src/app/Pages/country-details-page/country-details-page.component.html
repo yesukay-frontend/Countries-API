@@ -1,1 +1,78 @@
-<p>country-details-page works!</p>
+<section class="bg-white text-black min-h-screen">
+  <header class="flex justify-between items-center px-8 py-6 shadow-sm">
+    <h1 class="font-extrabold text-lg leading-6">Where in the world?</h1>
+    <button
+      aria-label="Toggle Dark Mode"
+      class="flex items-center space-x-2 text-sm font-semibold cursor-pointer"
+    >
+      <i class="fas fa-moon"></i>
+      <span>Dark Mode</span>
+    </button>
+  </header>
+  <main class="max-w-7xl mx-auto px-6 py-10">
+    <button
+      aria-label="Back"
+      class="inline-flex items-center space-x-2 px-6 py-2 shadow-md rounded-sm text-sm font-normal cursor-pointer"
+    >
+      <i class="fas fa-arrow-left"></i>
+      <span>Back</span>
+    </button>
+    <section
+      class="mt-16 flex flex-col md:flex-row md:items-start md:space-x-24"
+    >
+      <img
+        alt="Flag of Belgium with vertical stripes black, yellow, and red"
+        class="w-full max-w-md rounded-md shadow-md flex-shrink-0"
+        height="400"
+        src="https://storage.googleapis.com/a1aa/image/2504b6f6-7d8b-4789-e040-e340da53ebdc.jpg"
+        width="600"
+      />
+      <div class="mt-12 md:mt-0 flex-1 flex flex-col">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-16">
+          <div>
+            <h2 class="font-extrabold text-2xl mb-6">Belgium</h2>
+            <p class="text-sm mb-2"><strong>Native Name:</strong> België</p>
+            <p class="text-sm mb-2"><strong>Population:</strong> 11,319,511</p>
+            <p class="text-sm mb-2"><strong>Region:</strong> Europe</p>
+            <p class="text-sm mb-2">
+              <strong>Sub Region:</strong> Western Europe
+            </p>
+            <p class="text-sm mb-2"><strong>Capital:</strong> Brussels</p>
+          </div>
+          <div>
+            <p class="text-sm mb-2"><strong>Top Level Domain:</strong> .be</p>
+            <p class="text-sm mb-2"><strong>Currencies:</strong> Euro</p>
+            <p class="text-sm mb-2">
+              <strong>Languages:</strong> Dutch, French, German
+            </p>
+          </div>
+        </div>
+        <section
+          class="mt-16 flex flex-col md:flex-row md:items-center md:space-x-6"
+        >
+          <p class="text-sm font-semibold mb-4 md:mb-0">Border Countries:</p>
+          <div class="flex flex-wrap gap-3">
+            <button
+              class="px-4 py-1 text-sm shadow-sm rounded-sm bg-white border border-gray-200 cursor-pointer"
+              type="button"
+            >
+              France
+            </button>
+            <button
+              class="px-4 py-1 text-sm shadow-sm rounded-sm bg-white border border-gray-200 cursor-pointer"
+              type="button"
+            >
+              Germany
+            </button>
+            <button
+              class="px-4 py-1 text-sm shadow-sm rounded-sm bg-white border border-gray-200 cursor-pointer"
+              type="button"
+            >
+              Netherlands
+            </button>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+</section>
