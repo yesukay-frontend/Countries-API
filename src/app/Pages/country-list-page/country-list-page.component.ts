@@ -40,7 +40,6 @@ export class CountryListPageComponent implements OnInit {
     },
   ];
   ngOnInit(): void {
-    console.log('Countries: ', this.countries);
     const filterBtn = document.getElementById('regionFilterBtn')!;
     const filterList = document.getElementById('regionFilterList')!;
 
