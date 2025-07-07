@@ -7,7 +7,9 @@
     height="250"
   />
   <div class="p-6">
-    <h2 class="font-extrabold text-base mb-3 select-none">Country</h2>
+    <h2 class="font-extrabold text-base mb-3 select-none">
+      {{ country.name }}
+    </h2>
     <p class="text-xs mb-1">
       <strong>Population:</strong> {{ country.population | number }}
     </p>
