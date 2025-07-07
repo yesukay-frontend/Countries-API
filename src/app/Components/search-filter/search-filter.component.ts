@@ -1,11 +1,29 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-search-filter',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './search-filter.component.html',
-  styleUrl: './search-filter.component.scss'
+  styleUrl: './search-filter.component.scss',
 })
 export class SearchFilterComponent {
+  @Output() search = new EventEmitter<string>();
+  @Output() filter = new EventEmitter<string>();
 
+  showDropdown = false;
+
+  onSearchChange(event: Event) {
+    const input = event.target as HTMLInputElement;
+    this.search.emit(input.value);
+  }
+
+  onRegionSelect(region: string) {
+    this.filter.emit(region);
+    this.showDropdown = false;
+  }
+
+  toggleDropdown() {
+    this.showDropdown = !this.showDropdown;
+  }
 }

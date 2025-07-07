@@ -1,13 +1,22 @@
 <div class="bg-gray-50 text-gray-900 min-h-screen">
   <app-header></app-header>
+
   <main class="px-8 py-10 max-w-7xl mx-auto">
-    <app-search-filter></app-search-filter>
+    <app-search-filter
+      (search)="onSearch($event)"
+      (filter)="onFilter($event)"
+    ></app-search-filter>
+
+    <div *ngIf="loading$ | async" class="text-center py-10 text-gray-500">
+      Loading countries...
+    </div>
+
     <section
       aria-label="Country cards"
       class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10"
     >
       <app-country-card
-        *ngFor="let country of countries"
+        *ngFor="let country of countries$ | async"
         [country]="country"
       ></app-country-card>
     </section>
