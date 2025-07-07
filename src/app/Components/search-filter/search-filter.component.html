@@ -3,6 +3,7 @@
 >
   <form
     class="flex items-center w-full md:w-96 bg-white rounded-md shadow-md px-4 py-3"
+    (submit)="$event.preventDefault()"
   >
     <i class="fas fa-search text-gray-400"></i>
     <input
@@ -10,6 +11,7 @@
       class="ml-3 w-full text-sm text-gray-500 placeholder-gray-400 focus:outline-none"
       placeholder="Search for a country..."
       type="search"
+      (input)="onSearchChange($event)"
     />
   </form>
 
@@ -20,50 +22,28 @@
       class="w-full bg-white rounded-md shadow-md px-4 py-3 text-sm text-gray-900 flex justify-between items-center cursor-pointer"
       id="regionFilterBtn"
       type="button"
+      (click)="toggleDropdown()"
     >
       Filter by Region
       <i class="fas fa-chevron-down text-gray-600"></i>
     </button>
     <ul
       aria-labelledby="regionFilterBtn"
-      class="absolute right-0 mt-1 w-full bg-white rounded-md shadow-lg text-gray-900 text-sm hidden"
+      class="absolute right-0 mt-1 w-full bg-white rounded-md shadow-lg text-gray-900 text-sm"
       id="regionFilterList"
       role="listbox"
+      *ngIf="showDropdown"
     >
       <li
+        *ngFor="
+          let region of ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania']
+        "
         class="px-4 py-2 hover:bg-gray-100 cursor-pointer"
         role="option"
         tabindex="0"
+        (click)="onRegionSelect(region)"
       >
-        Africa
-      </li>
-      <li
-        class="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-        role="option"
-        tabindex="0"
-      >
-        America
-      </li>
-      <li
-        class="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-        role="option"
-        tabindex="0"
-      >
-        Asia
-      </li>
-      <li
-        class="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-        role="option"
-        tabindex="0"
-      >
-        Europe
-      </li>
-      <li
-        class="px-4 py-2 hover:bg-gray-100 cursor-pointer"
-        role="option"
-        tabindex="0"
-      >
-        Oceania
+        {{ region }}
       </li>
     </ul>
   </div>

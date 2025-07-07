@@ -5,12 +5,13 @@ import { Country } from '../Model/country.interface';
 
 @Injectable({ providedIn: 'root' })
 export class CountryApiService {
-  private BASE_URL = 'https://restcountries.com/v3.1';
+  private BASE_URL =
+    'https://restcountries.com/v3.1/all?fields=name,population,region,capital,subregion,cca3,capital,currencies,languages,flags';
 
   constructor(private http: HttpClient) {}
 
   getAllCountries(): Observable<Country[]> {
-    return this.http.get<Country[]>(`${this.BASE_URL}/all`).pipe(
+    return this.http.get<Country[]>(`${this.BASE_URL}`).pipe(
       catchError(() => of([])) // In real use, you'd handle/log this properly
     );
   }
