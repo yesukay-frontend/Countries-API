@@ -1,4 +1,7 @@
-<article class="bg-white rounded-md shadow-md overflow-hidden max-w-xs">
+<article
+  class="bg-white rounded-md shadow-md overflow-hidden max-w-xs"
+  (click)="openCountryDetails()"
+>
   <img
     [src]="country.flags.png"
     [alt]="'Flag of ' + country.name"
