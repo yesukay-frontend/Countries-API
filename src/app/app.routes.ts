@@ -4,5 +4,5 @@ import { CountryDetailsPageComponent } from './Pages/country-details-page/countr
 
 export const routes: Routes = [
   { path: '', component: CountryListPageComponent },
-  { path: 'country/:name', component: CountryDetailsPageComponent },
+  { path: 'country/:code', component: CountryDetailsPageComponent },
 ];
