@@ -24,7 +24,7 @@
       type="button"
       (click)="toggleDropdown()"
     >
-      Filter by Region
+      {{ selectedRegion || "Filter by Region" }}
       <i class="fas fa-chevron-down text-gray-600"></i>
     </button>
     <ul
@@ -36,7 +36,14 @@
     >
       <li
         *ngFor="
-          let region of ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania']
+          let region of [
+            'All',
+            'Africa',
+            'Americas',
+            'Asia',
+            'Europe',
+            'Oceania'
+          ]
         "
         class="px-4 py-2 hover:bg-gray-100 cursor-pointer"
         role="option"

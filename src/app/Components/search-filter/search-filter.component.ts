@@ -12,15 +12,17 @@ export class SearchFilterComponent {
   @Output() filter = new EventEmitter<string>();
 
   showDropdown = false;
-
+  selectedRegion = '';
   onSearchChange(event: Event) {
     const input = event.target as HTMLInputElement;
     this.search.emit(input.value);
   }
 
   onRegionSelect(region: string) {
+    region = region === 'All' ? '' : region;
     this.filter.emit(region);
     this.showDropdown = false;
+    this.selectedRegion = region;
   }
 
   toggleDropdown() {
